@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route path="/" exact element={<Home />} />
         <Route path="/search" element={<SearchBar/>} />
-        <Route path="/country/:data" element={<CountryInfo/>} />
+        <Route path="/country/:country" element={<CountryInfo/>} />
         <Route path="*" element={<App />} />
       </Routes>
     </Router>

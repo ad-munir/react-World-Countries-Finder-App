@@ -61,7 +61,7 @@ function Home() {
                     <div className="countries">
                         {
                             countries.map((country, index) => (
-                                <Country key={index} name={country.name} flag={country.flag} />
+                                <Country key={index} country={country} />
                             ))
                         }
                     </div>
