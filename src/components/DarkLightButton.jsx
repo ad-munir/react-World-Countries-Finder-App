@@ -3,7 +3,7 @@
 const DarkLightButton = ({ toggleDarkMode }) => {
 
     return (
-        <div>
+        <div className="mode">
             {/* <button onClick={toggleDarkMode}> {mode ? "light" : "dark"} mode</button> */}
             <input type="checkbox" className="checkbox" id="checkbox" onChange={toggleDarkMode} />
                 <label htmlFor="checkbox" className="checkbox-label">

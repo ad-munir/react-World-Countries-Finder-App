@@ -23,8 +23,8 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" exact element={<Home />} />
-          <Route path="/search" element={<SearchBar/>} />
-          <Route path="/country" element={<CountryInfo/>} />
+          <Route path="/search" element={<SearchBar />} />
+          <Route path="/country" element={<CountryInfo />} />
           <Route path="*" element={<App />} />
         </Routes>
       </Router>
