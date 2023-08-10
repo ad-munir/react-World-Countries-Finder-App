@@ -7,7 +7,7 @@ const Header = () => {
     const { darkMode, toggleDarkMode } = useContext(CountryContext);
 
     return (
-        <header className="header">
+        <header className={darkMode ? "dark" : "light"}>
             <div className="title">
                 <h1>World Countries </h1>
                 <div className="title-underline"></div>

@@ -28,7 +28,7 @@ function Home() {
 
 
     return (
-        <div className={darkMode ? "dark-mode home" : "home"}>
+        <div className={darkMode ? "dark" : "light"}>
 
             <Header />
             <SearchBox countries={countries} />
