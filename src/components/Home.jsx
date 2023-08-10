@@ -1,6 +1,6 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Country from "./Country";
-import { CountryContext } from "../Contexts/CountryContext";
+import SearchBar from "./SearchBar";
 
 
 const url = 'https://restcountries.com/v3.1/all';
@@ -27,18 +27,20 @@ function Home() {
     }
 
     function convert(json) {
-        return json.map(country => {
-            return {
-                'name': country.name.common,
-                'code': country.cca2,
-                'flag': country.flags.png,
-                'capital': country.capital,
-                'language': Object.values(country.languages || {}).join(', '),
-                'population': country.population,
-                'area': country.area,
-                'region': country.region,
-            }
-        });
+        return json
+            .filter(country => country.name.common !== "Western Sahara" && country.name.common !== "Israel")
+            .map(country => {
+                return {
+                    'name': country.name.common,
+                    'code': country.cca2,
+                    'flag': country.flags.png,
+                    'capital': country.capital,
+                    'language': Object.values(country.languages || {}).join(', '),
+                    'population': country.population,
+                    'area': country.area,
+                    'region': country.region,
+                }
+            });
     }
 
     useEffect(() => {
@@ -60,14 +62,9 @@ function Home() {
                 loading ?
                     <div>Loading..</div>
                     :
-                    <div className="countries">
-                        {
-                            countries.map((country, index) => (
-                                <Country key={index} country={country} />
-                            ))
-                        }
-                    </div>
-
+                    <>
+                        <SearchBar countries={countries} />
+                    </>
             }
         </div>
     )
