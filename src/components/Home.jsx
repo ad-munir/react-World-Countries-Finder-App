@@ -58,7 +58,7 @@ function Home() {
     return (
         <div className={ darkMode ? "dark-mode home-wrapper" : "home-wrapper" }>
                 
-                <DarkLightButton mode={darkMode} toggleDarkMode={toggleDarkMode} />
+                <DarkLightButton toggleDarkMode={toggleDarkMode} />
 
             <div className="title">
                 <h1>World Countries </h1>
