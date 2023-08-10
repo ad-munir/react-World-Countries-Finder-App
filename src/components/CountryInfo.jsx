@@ -1,15 +1,14 @@
-import { useParams } from "react-router-dom";
+import { useContext } from "react";
+import { CountryContext } from "../Contexts/CountryContext";
 
 function CountryInfo() {
-    const { data } = useParams();
-    
-  const decodedData = decodeURIComponent(data);
-  const country = JSON.parse(decodedData);
+    const {username, country, setCountry} = useContext(CountryContext)
 
+    console.log(username)
     console.log(country)
     return (
         <div>
-            <h1>Other Page</h1>
+            <h1>hello {username}</h1>
             <p>Received data: {country.name}</p>
         </div>
     );

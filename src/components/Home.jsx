@@ -1,10 +1,14 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Country from "./Country";
+import { CountryContext } from "../Contexts/CountryContext";
 
 
 const url = 'https://restcountries.com/v3.1/all';
 
 function Home() {
+
+    // const { username, setUsername, country, setCountry } = useContext(CountryContext)
+    // console.log(username)
 
     const [countries, setCountries] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -37,12 +41,10 @@ function Home() {
         });
     }
 
-
-
     useEffect(() => {
         setTimeout(() => {
             setLoading(false);
-        }, 2000);
+        }, 200);
 
 
         fetchData();
@@ -51,7 +53,7 @@ function Home() {
     return (
         <div className='home-wrapper'>
             <div className="title">
-                <h1>World Countries</h1>
+                <h1>World Countries </h1>
                 <div className="title-underline"></div>
             </div>
             {
