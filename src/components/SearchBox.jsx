@@ -37,7 +37,7 @@ const SearchBox = ({ countries }) => {
                 </div>
 
                 <div className="search-group">
-                    <button>Clear Filters</button>
+                    <button className="clear-btn">Clear Filters</button>
                 </div>
             </div>
         </div>

@@ -1,10 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200;400;500;600;700;800&family=Jost:wght@300;400;500&family=Roboto+Condensed&family=Staatliches&display=swap');
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
+  /* font-family: 'Jost', sans-serif; */
+  font-family: 'Roboto Condensed', sans-serif;
+  /* font-family: 'Staatliches', cursive; */
   font-weight: 400;
   background-color: #FFFFFF;
   color: #000000;
 }
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -40,8 +45,8 @@ header {
   padding: 10px;
   text-align: center;
   border-bottom: solid 1px rgb(200, 197, 197);
-  box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
 .mode-btn {
@@ -53,9 +58,15 @@ header {
 /* ----- DarkLightComponent Conponent ----- */
 /* ---------------------------------------- */
 
-body.dark {background-color: #292c35;} /* #9b59b6 */
+body.dark {
+  background-color: #292c35;
+}
 
-body.dark h1{color: #fff;}
+/* #9b59b6 */
+
+body.dark h1 {
+  color: #fff;
+}
 
 .checkbox {
   opacity: 0;
@@ -75,9 +86,13 @@ body.dark h1{color: #fff;}
   align-items: center;
 }
 
-.fa-moon {color: #f1c40f;}
+.fa-moon {
+  color: #f1c40f;
+}
 
-.fa-sun {color: #f39c12;}
+.fa-sun {
+  color: #f39c12;
+}
 
 .checkbox-label .ball {
   background-color: #fff;
@@ -90,7 +105,7 @@ body.dark h1{color: #fff;}
   transition: transform 0.2s linear;
 }
 
-.checkbox:checked + .checkbox-label .ball {
+.checkbox:checked+.checkbox-label .ball {
   transform: translateX(24px);
 }
 
@@ -99,69 +114,109 @@ body.dark h1{color: #fff;}
 /* ---------------------------------------- */
 
 .search-container {
-  padding: 50px;
-  margin: 50px;
-  border: solid ;
+  padding: 20px 40px;
+  margin: 50px 100px;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #000;
+  box-shadow: 0 4px 8px 0 rgba(82, 82, 82, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.search-container h2 {
+  font-size: 30px;
+  font-weight: 400;
 }
 
 .search-form {
-  border: solid ;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-.search-group  {
+.search-group {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: start;
+  width: 90%;
+  padding: 20px 0;
 }
 
 .search-group label {
   font-size: 20px;
+  color: #000000;
+  padding: 8px 0;
 }
 
+.clear-btn {
+  width: 200px;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 17px;
+  font-family: inherit;
+  background-color: #f8d7da;
+  color: #C21010;
+  box-shadow: 0 4px 8px 0 rgba(82, 82, 82, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+.clear-btn:hover {
+  background-color:  #C21010 ;
+  color: #fff;
+  transition: background 0.5s linear;
+
+}
+
+/* --- dropdowns --- */
 
 
 .select-dropdown,
 .select-dropdown * {
-	margin: 0;
-	padding: 0;
-	position: relative;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  box-sizing: border-box;
   background-color: #f0f4f8;
   border: solid 1px #a3b3c2;
 }
+
 .select-dropdown {
-	position: relative;
-	border-radius: 4px;
+  position: relative;
+  border-radius: 4px;
+  width: 100%;
 }
+
 .select-dropdown select {
-	font-size: 1rem;
-	font-weight: normal;
-	max-width: 100%;
-	padding: 8px 24px 8px 10px;
-	border: none;
-	background-color: transparent;
-		-webkit-appearance: none;
-		-moz-appearance: none;
-	appearance: none;
+  font-size: 1rem;
+  width: 100%;
+  padding: 8px 24px 8px 10px;
+  border: none;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
 }
-.select-dropdown select:active, .select-dropdown select:focus {
-	outline: none;
-	box-shadow: none;
+
+
+.select-dropdown select:active,
+.select-dropdown select:focus {
+  outline: none;
+  box-shadow: none;
 }
+
 .select-dropdown:after {
-	content: "";
-	position: absolute;
-	top: 50%;
-	right: 8px;
-	width: 0;
-	height: 0;
-	margin-top: -2px;
-	border-top: 5px solid #aaa;
-	border-right: 5px solid transparent;
-	border-left: 5px solid transparent;
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  width: 0;
+  height: 0;
+  margin-top: -2px;
+  border-top: 5px solid #aaa;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
 }
 
 /* ----- SerachBar Component ----- */
@@ -177,7 +232,7 @@ body.dark h1{color: #fff;}
 
 }
 
-button {
+.search-btn {
   border-radius: 0px 8px 0px 0px;
   border: 1px solid transparent;
   padding: 0.3em .5em;
@@ -204,12 +259,12 @@ button {
   border: solid 2px #646cff;
 }
 
-button:hover {
+.search-btn:hover {
   border: solid 2px #646cff;
 }
 
-button:focus,
-button:focus-visible {
+.search-btn:focus,
+.search-btn:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
@@ -221,7 +276,3 @@ button:focus-visible {
     'GRAD' 0,
     'opsz' 48
 }
-
-
-
-
