@@ -2,17 +2,27 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  text-align: center;
+  /* color: rgba(255, 255, 255, 0.87);
+  background-color: #242424; */
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  background-color: #FFFFFF;
+  color: #000000;
 }
+
+.home-wrapper {
+  margin: 0 auto;
+  padding: 2rem;
+}
+.dark-mode {
+  background-color: #1E1E1E;
+  color: #FFFFFF;
+}
+
 
 a {
   font-weight: 500;
@@ -37,71 +47,10 @@ h1 {
   line-height: 1.1;
 }
 
-.search-box {
-  width: 20rem;
-  display: grid;
-  grid-template-columns: 8fr 1fr;
 
-}
 
-button {
-  border-radius: 0px 8px 0px 0px;
-  border: 1px solid transparent;
-  padding: 0.3em .5em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-
-.search-input {
-  border-radius: 8px 0px 0px;
-  padding-left: 1em;
-  font-size: 17px;
-}
-
-.search-input:hover {
-  border: none;
-}
-
-.search-input:focus {
-  outline: none;
-  border: solid 2px #646cff;
-}
-
-button:hover {
-  border: solid 2px #646cff;
-}
-
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-
-  a:hover {
-    color: #747bff;
-  }
-
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
-.material-symbols-outlined {
-  font-variation-settings:
-    'FILL' 0,
-    'wght' 700,
-    'GRAD' 0,
-    'opsz' 48
-}
+/* ----- Country Conponent ----- */
+/* ----------------------------- */
 
 .countries {
   display: grid;
@@ -187,12 +136,21 @@ button:focus-visible {
 
 /* ----- Country Info Conponent ----- */
 /* ---------------------------------- */
+.country-info-wrapper {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+}
 
 .country-info-card {
   position: relative;
   width: 650px;
   height: min-content;
-  padding: 2em 0;
   padding-right: 2em;
   padding-left: 2em;
   background-image: linear-gradient(45deg,
@@ -207,7 +165,7 @@ button:focus-visible {
       hsl(48deg 100% 77%) 89%,
       hsl(55deg 100% 75%) 100%);
   border-radius: 5px;
-  margin: 15px;
+  margin: 10px;
   color: #171a54;
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -271,6 +229,65 @@ button:focus-visible {
 
 /* ----- SerachBar Component ----- */
 /* ------------------------------- */
+
+
+/* --- searchbar --- */
+
+.search-box {
+  width: 20rem;
+  display: grid;
+  grid-template-columns: 8fr 1fr;
+
+}
+
+button {
+  border-radius: 0px 8px 0px 0px;
+  border: 1px solid transparent;
+  padding: 0.3em .5em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+.search-input {
+  border-radius: 8px 0px 0px;
+  padding-left: 1em;
+  font-size: 17px;
+}
+
+.search-input:hover {
+  border: none;
+}
+
+.search-input:focus {
+  outline: none;
+  border: solid 2px #646cff;
+}
+
+button:hover {
+  border: solid 2px #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 700,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+
+/* --- continents-dropdown --- */
+
 .continents-dropdown {
   position: relative;
   width: 200px; /* Adjust the width as needed */

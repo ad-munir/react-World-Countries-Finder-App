@@ -1,14 +1,15 @@
-import { useEffect, useState } from "react";
-import Country from "./Country";
+import { useContext, useEffect, useState } from "react";
 import SearchBar from "./SearchBar";
+import { CountryContext } from "../Contexts/CountryContext";
+import DarkLightButton from "./DarkLightButton";
 
 
 const url = 'https://restcountries.com/v3.1/all';
 
 function Home() {
 
-    // const { username, setUsername, country, setCountry } = useContext(CountryContext)
-    // console.log(username)
+
+    const {darkMode, toggleDarkMode} = useContext(CountryContext);
 
     const [countries, setCountries] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -52,8 +53,13 @@ function Home() {
         fetchData();
     }, [])
 
+
+
     return (
-        <div className='home-wrapper'>
+        <div className={ darkMode ? "dark-mode home-wrapper" : "home-wrapper" }>
+                
+                <DarkLightButton mode={darkMode} toggleDarkMode={toggleDarkMode} />
+
             <div className="title">
                 <h1>World Countries </h1>
                 <div className="title-underline"></div>

@@ -1,14 +1,15 @@
 import { useContext } from "react";
 import { CountryContext } from "../Contexts/CountryContext";
+import DarkLightButton from "./DarkLightButton";
 
 function CountryInfo() {
-    const { username, country } = useContext(CountryContext)
+    const { country, darkMode, toggleDarkMode } = useContext(CountryContext)
 
-    console.log(username)
-    console.log(country)
     return (
-        <div>
-            <h1>hello {username}</h1>
+        <div className={ darkMode ? "dark-mode country-info-wrapper" : "country-info-wrapper" }>
+            
+            <DarkLightButton mode={darkMode} toggleDarkMode={toggleDarkMode} />
+            
             <div className="country-info-card">
                 <div className="country-info">
                     <h5>Name: {country.name}</h5>
