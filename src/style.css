@@ -18,16 +18,16 @@ body {
 
 .home {
   background-color: aqua;
-  padding: 20px;
-  margin: 20px;
 }
 
 /* ----- Header Component ---- */
 header {
-  background-color: yellow;
+  background-color: #fff;
   position: relative;
   padding: 10px;
   text-align: center;
+  border-bottom: solid 1px;
+  box-shadow: ;
 }
 
 .mode {
