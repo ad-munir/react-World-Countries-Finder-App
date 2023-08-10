@@ -30,12 +30,12 @@ function SearchBar({ countries }) {
     console.log()
     return (
         <>
-            <ContinentsDropdown />
+            {/* <ContinentsDropdown /> */}
             <div className="search-box">
                 <input type="text" placeholder="search" onChange={(e) => onWrite(e.target.value)} className="search-input" />
                 <button className="search-btn material-symbols-outlined">search</button>
             </div>
-            {searchResults.length === 0 && input ?
+            {/* {searchResults.length === 0 && input ?
                 <h6>Not Found Country</h6>
                 :
                 (
@@ -52,7 +52,7 @@ function SearchBar({ countries }) {
                         }
                     </div >
                 )
-            }
+            } */}
             <hr />
 
         </>

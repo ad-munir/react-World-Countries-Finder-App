@@ -1,13 +1,13 @@
 /* eslint-disable react/prop-types */
 import SearchBar from "./SearchBar"
 
-const SearchBox = ({countries}) => {
+const SearchBox = ({ countries }) => {
 
 
-    
+
     return (
-        <div className="search-box">
-            <h2>Search Form</h2> 
+        <div className="search-container">
+            <h2>Search Form</h2>
             <div className="search-form">
                 <div className="search-group">
                     <label htmlFor="search-bar">Search</label>
@@ -15,13 +15,25 @@ const SearchBox = ({countries}) => {
                 </div>
 
                 <div className="search-group">
-                    <label htmlFor="continent-filter">Continent</label>
-                    <input type="text" id="continent-filter" className="continent-filter" />
+                    <label htmlFor="continent-dropdown">Continent</label>
+                    <div className="select-dropdown" id="continent-dropdown" >
+                        <select>
+                            <option value="Option 1">First Option</option>
+                            <option value="Option 2">2nd Option</option>
+                            <option value="Option 3">Option Number 3</option>
+                        </select>
+                    </div>
                 </div>
 
                 <div className="search-group">
-                    <label htmlFor="language-filter">Language</label>
-                    <input type="text" id="language-filter" className="language-filter" />
+                    <label htmlFor="language-dropdown">Language</label>
+                    <div className="select-dropdown" id="language-dropdown" >
+                        <select>
+                            <option value="Option 1">First Option</option>
+                            <option value="Option 2">2nd Option</option>
+                            <option value="Option 3">Option Number 3</option>
+                        </select>
+                    </div>
                 </div>
 
                 <div className="search-group">

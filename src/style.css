@@ -9,7 +9,6 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  overflow: hidden;
 }
 
 body {
@@ -23,14 +22,14 @@ body {
 
 
 .light {
-  background-color: #fff;
-  color: #000;
+  background-color: #DDE6ED;
+  color: #9DB2BF;
   transition: background 0.2s linear;
 }
 
 .dark {
-  background-color: #000000;
-  color: #fff;
+  background-color: #27374D;
+  color: #DDE6ED;
   transition: background 0.2s linear;
 }
 
@@ -96,7 +95,132 @@ body.dark h1{color: #fff;}
 }
 
 
+/* ----- SearchBox Conponent ----- */
+/* ---------------------------------------- */
 
+.search-container {
+  padding: 50px;
+  margin: 50px;
+  border: solid ;
+}
+
+.search-form {
+  border: solid ;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.search-group  {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+.search-group label {
+  font-size: 20px;
+}
+
+
+
+.select-dropdown,
+.select-dropdown * {
+	margin: 0;
+	padding: 0;
+	position: relative;
+	box-sizing: border-box;
+  background-color: #f0f4f8;
+  border: solid 1px #a3b3c2;
+}
+.select-dropdown {
+	position: relative;
+	border-radius: 4px;
+}
+.select-dropdown select {
+	font-size: 1rem;
+	font-weight: normal;
+	max-width: 100%;
+	padding: 8px 24px 8px 10px;
+	border: none;
+	background-color: transparent;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+	appearance: none;
+}
+.select-dropdown select:active, .select-dropdown select:focus {
+	outline: none;
+	box-shadow: none;
+}
+.select-dropdown:after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	right: 8px;
+	width: 0;
+	height: 0;
+	margin-top: -2px;
+	border-top: 5px solid #aaa;
+	border-right: 5px solid transparent;
+	border-left: 5px solid transparent;
+}
+
+/* ----- SerachBar Component ----- */
+/* ------------------------------- */
+
+
+/* --- searchbar --- */
+
+.search-box {
+  width: 20rem;
+  display: grid;
+  grid-template-columns: 8fr 1fr;
+
+}
+
+button {
+  border-radius: 0px 8px 0px 0px;
+  border: 1px solid transparent;
+  padding: 0.3em .5em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+.search-input {
+  border-radius: 8px 0px 0px;
+  padding-left: 1em;
+  font-size: 17px;
+}
+
+.search-input:hover {
+  border: none;
+}
+
+.search-input:focus {
+  outline: none;
+  border: solid 2px #646cff;
+}
+
+button:hover {
+  border: solid 2px #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 700,
+    'GRAD' 0,
+    'opsz' 48
+}
 
 
 
