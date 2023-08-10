@@ -28,6 +28,7 @@ body {
   transition: background 0.2s linear;
 }
 
+
 .dark {
   background-color: #000000;
   color: #fff;
