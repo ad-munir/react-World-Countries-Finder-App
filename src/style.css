@@ -115,7 +115,7 @@ body.dark h1 {
 
 .search-container {
   padding: 20px 40px;
-  margin: 50px 100px;
+  margin: 140px 200px;
   border-radius: 5px;
   background-color: #fff;
   color: #000;
@@ -178,7 +178,8 @@ body.dark h1 {
   position: relative;
   box-sizing: border-box;
   background-color: #f0f4f8;
-  border: solid 1px #a3b3c2;
+  border: solid 1px #96c1dc;
+  font-family: inherit;
 }
 
 .select-dropdown {
@@ -225,11 +226,24 @@ body.dark h1 {
 
 /* --- searchbar --- */
 
-.search-box {
-  width: 20rem;
-  display: grid;
-  grid-template-columns: 8fr 1fr;
 
+.search-input {
+  padding: 8px 24px 8px 10px;
+  width: 100%;
+  font-family: inherit;
+  font-size: 17px;
+  background-color: #f0f4f8;
+  border: solid 1px #96c1dc;
+  border-radius: 4px;
+}
+
+.search-input:hover {
+  border: none;
+}
+
+.search-input:focus {
+  outline: none;
+  border: solid 2px #646cff;
 }
 
 .search-btn {
@@ -244,20 +258,6 @@ body.dark h1 {
   transition: border-color 0.25s;
 }
 
-.search-input {
-  border-radius: 8px 0px 0px;
-  padding-left: 1em;
-  font-size: 17px;
-}
-
-.search-input:hover {
-  border: none;
-}
-
-.search-input:focus {
-  outline: none;
-  border: solid 2px #646cff;
-}
 
 .search-btn:hover {
   border: solid 2px #646cff;
