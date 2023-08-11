@@ -7,7 +7,7 @@ const SearchBox = ({ countries }) => {
 
     return (
         <div className="search-container">
-            <h2>Search Form</h2>
+            <h2>Search for a Country</h2>
             <div className="search-form">
                 <div className="search-group">
                     <label htmlFor="search-bar">Search</label>

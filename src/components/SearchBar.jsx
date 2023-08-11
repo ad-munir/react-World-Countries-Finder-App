@@ -53,7 +53,6 @@ function SearchBar({ countries }) {
                     </div >
                 )
             } */}
-            <hr />
 
         </>
     )

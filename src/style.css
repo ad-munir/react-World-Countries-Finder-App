@@ -138,12 +138,13 @@ body.dark h1 {
   justify-content: center;
   align-items: start;
   width: 90%;
+  height: 100px;
   padding: 20px 0;
 }
 
 .search-group label {
   font-size: 20px;
-  color: #000000;
+  color: #27374D;
   padding: 8px 0;
 }
 
@@ -226,7 +227,9 @@ body.dark h1 {
 
 /* --- searchbar --- */
 
-
+.search-box {
+  width: 100%;
+}
 .search-input {
   padding: 8px 24px 8px 10px;
   width: 100%;
@@ -238,7 +241,7 @@ body.dark h1 {
 }
 
 .search-input:hover {
-  border: none;
+  border: solid 1px #f0f4f8;
 }
 
 .search-input:focus {
