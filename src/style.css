@@ -150,6 +150,7 @@ body.dark h1 {
   font-size: 20px;
   color: #27374D;
   padding: 8px 0;
+  text-transform: capitalize;
 }
 
 .clear-btn {
@@ -377,6 +378,7 @@ body.dark h1 {
   font-size: 22px;
   font-weight: 700;
   color: #1a1a1a;
+  line-height: 2;
 }
 
 .country-img {
