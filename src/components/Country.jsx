@@ -17,19 +17,23 @@ function Country({ country }) {
         setCountry(country)
     }
 
-    
+
 
     return (
-        <div onClick={() => HandleSetCountry()}>
-            <Link to={`/country`} className='country-card'>
-                <div className="country-name">{country.name}</div>
-                <div className="country-img-container">
+        <Link to={`/country`} >
+
+            <div className="country-card" onClick={() => HandleSetCountry()}>
+                <div className="country-name">
+                    {country.name}
+                </div>
+                
+                <div className="country-img">
                     <img src={country.flag} alt={country.name} className="country-img" />
                     <div className="country-border"></div>
                 </div>
-            </Link>
-        </div>
+            </div>
 
+        </Link>
     )
 }
 

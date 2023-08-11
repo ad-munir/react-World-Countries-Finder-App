@@ -4,6 +4,7 @@ import { fetchCountries } from "../Api/restcountries";
 import Header from "./Header";
 import SearchBox from "./SearchBox";
 import Country from "./Country";
+import CountriesSection from "./CountriesSection";
 
 function Home() {
 
@@ -36,9 +37,10 @@ function Home() {
                 loading ?
                     <div className="loader">Loading..</div>
                     :
-                    countries.map((country, index) => (
-                        <Country key={index} country={country} />
-                    ))
+                    // countries.map((country, index) => (
+                    //     <Country key={index} country={country} />
+                    // ))
+                    <CountriesSection countries={countries} />
             }
         </div>
     )

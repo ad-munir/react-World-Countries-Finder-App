@@ -163,7 +163,7 @@ body.dark h1 {
 }
 
 .clear-btn:hover {
-  background-color:  #C21010 ;
+  background-color: #C21010;
   color: #fff;
   transition: background 0.5s linear;
 
@@ -230,6 +230,7 @@ body.dark h1 {
 .search-box {
   width: 100%;
 }
+
 .search-input {
   padding: 8px 24px 8px 10px;
   width: 100%;
@@ -271,7 +272,132 @@ body.dark h1 {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+/* Media queries for responsiveness */
+/* Media queries for responsiveness */
+@media only screen and (max-width: 1200px) {
+  .search-container {
+    margin: 80px;
+  }
+}
 
+@media only screen and (max-width: 992px) {
+  .search-container {
+    margin: 60px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .search-container {
+    margin: 40px;
+  }
+
+  .search-form {
+    grid-template-columns: 1fr;
+  }
+
+  .search-group {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .search-container {
+    margin: 20px;
+  }
+
+  .search-form {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .search-group {
+    width: 100%;
+    height: auto;
+    padding: 10px 0;
+  }
+}
+
+
+
+
+/* ----- Country Conponent ----- */
+/* ----------------------------- */
+
+.countries-section {
+  padding: 10px;
+  border: solid;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.country-card {
+  border: solid red;
+  height: 70%;
+}
+
+.country-card:hover {
+  
+}
+
+.country-name {
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+}
+/* 
+.country-img {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  right: -40px;
+}
+
+.country-img img {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  z-index: 1;
+}
+
+.country-border {
+  width: 140px;
+  height: 140px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  background-color: #213547;
+}
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----- material icons ----- */
 .material-symbols-outlined {
   font-variation-settings:
     'FILL' 0,
