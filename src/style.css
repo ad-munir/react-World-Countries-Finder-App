@@ -16,6 +16,10 @@
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
   transition: background 0.2s linear;
 }
@@ -115,7 +119,7 @@ body.dark h1 {
 
 .search-container {
   padding: 20px 40px;
-  margin: 140px 200px;
+  margin: 70px 200px 50px;
   border-radius: 5px;
   background-color: #fff;
   color: #000;
@@ -324,48 +328,78 @@ body.dark h1 {
 /* ----------------------------- */
 
 .countries-section {
-  padding: 10px;
-  border: solid;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 300px);
   gap: 20px;
+  justify-content: center;
 }
 
 .country-card {
-  border: solid red;
-  height: 70%;
+  position: relative;
+  height: 175px;
+  background-image: linear-gradient(45deg,
+      hsl(240deg 65% 93%) 0%,
+      hsl(271deg 96% 94%) 11%,
+      hsl(303deg 100% 93%) 22%,
+      hsl(316deg 100% 92%) 33%,
+      hsl(337deg 100% 92%) 44%,
+      hsl(6deg 100% 90%) 56%,
+      hsl(27deg 100% 86%) 67%,
+      hsl(39deg 100% 81%) 78%,
+      hsl(48deg 100% 77%) 89%,
+      hsl(55deg 100% 75%) 100%);
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(82, 82, 82, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
 }
 
 .country-card:hover {
-  
+  background-image: linear-gradient(
+    45deg,
+    hsl(240deg 87% 88%) 0%,
+    hsl(272deg 88% 88%) 11%,
+    hsl(309deg 94% 87%) 22%,
+    hsl(323deg 100% 87%) 33%,
+    hsl(341deg 100% 87%) 44%,
+    hsl(5deg 100% 87%) 56%,
+    hsl(25deg 100% 82%) 67%,
+    hsl(38deg 100% 79%) 78%,
+    hsl(48deg 100% 76%) 89%,
+    hsl(55deg 100% 75%) 100%
+  );
 }
 
+
 .country-name {
-  font-size: 20px;
+  width: 165px;
+  padding-left: 15px;
+  padding-top: 30px;
+  font-size: 22px;
   font-weight: 700;
-  display: flex;
+  color: #1a1a1a;
 }
-/* 
+
 .country-img {
   width: 200px;
   height: 200px;
   position: absolute;
-  right: -40px;
+  right: -30px;
+  top: 0;
 }
 
 .country-img img {
   width: 120px;
   height: 120px;
   position: absolute;
-  top: 25px;
-  left: 25px;
+  top: 22.5px;
+  left: 22.5px;
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
   z-index: 1;
 }
 
 .country-border {
-  width: 140px;
-  height: 140px;
+  width: 135px;
+  height: 135px;
   position: absolute;
   top: 15px;
   left: 15px;
@@ -373,7 +407,7 @@ body.dark h1 {
   background-color: #213547;
 }
 
-*/
+
 
 
 
