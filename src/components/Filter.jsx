@@ -7,13 +7,16 @@ const Filter = ({ name, options }) => {
             <label htmlFor="dropdown">{name}</label>
             <div className="select-dropdown" id="dropdown" >
                 <select>
-                    {options.map( option => {
-                        <option key={option} value={option}>{option}k</option>
-                    })}
+                    {options.map( option => 
+                        <option key={option} value={option}>
+                            {option}
+                        </option>
+                    )}
                 </select>
             </div>
         </div>
     )
 }
+
 
 export default Filter

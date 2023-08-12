@@ -21,7 +21,7 @@ function convert(json) {
                 'code': country.cca2,
                 'flag': country.flags.png,
                 'capital': country.capital,
-                'language': Object.values(country.languages || {}).join(', '),
+                'language': country.languages,
                 'population': country.population,
                 'area': country.area,
                 'region': country.region,
