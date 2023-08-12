@@ -1,10 +1,12 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react"
 
-function SearchBar({ countries, setSearchedCountry }) {
-
+function SearchBar({ countries, setSearchResult, searchResult }) {
     const [input, setInput] = useState("");
-    const [searchResults, setSearchResults] = useState([]);
+    // const [searchResult, setSearchResult] = useState(countries);
+    
+    
+    
 
     //old
     // const onWrite = (value) => {
@@ -20,17 +22,17 @@ function SearchBar({ countries, setSearchedCountry }) {
 
     // }
 
-    const onWrite = (value) => {
+    const onSearch = (value) => {
 
         setInput(value);
 
         if (value === "") {
-            // setSearchResults([])
+            setSearchResult(countries)
             console.log("empty");
 
         } else {
-            // setSearchResults(displayResult(value));
-            setSearchedCountry(displayResult(value))
+            // setSearchedCountry(displayResult(value))
+            setSearchResult(displayResult(value))
         }
 
     }
@@ -45,7 +47,7 @@ function SearchBar({ countries, setSearchedCountry }) {
         <div className="search-group">
             <label htmlFor="search-bar">country</label>
             <div className="search-box">
-                <input type="text" placeholder="..." onChange={(e) => onWrite(e.target.value)} className="search-input" />
+                <input type="text" placeholder="..." onChange={(e) => onSearch(e.target.value)} className="search-input" />
             </div>
 
             {/* {searchResults.length === 0 && input ?

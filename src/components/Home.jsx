@@ -11,7 +11,7 @@ function Home() {
     const { darkMode } = useContext(CountryContext);
 
     const [countries, setCountries] = useState([]);
-    const [searchedCountry, setSearchedCountry] = useState([]);
+    const [searchResult, setSearchResult] = useState(countries);
     const [loading, setLoading] = useState(true);
 
 
@@ -20,13 +20,15 @@ function Home() {
         setTimeout(() => {
             setLoading(false);
         }, 200);
-
+        
         fetchCountries().then(data => {
             setCountries(data);
         });
-        setSearchedCountry(countries)
     }, [])
+    
 
+    console.log(countries)
+    console.log(searchResult)
 
 
 
@@ -34,12 +36,12 @@ function Home() {
         <div className={darkMode ? "dark" : "light"}>
 
             <Header />
-            <SearchContainer countries={searchedCountry} setSearchedCountry={setSearchedCountry} />
+            <SearchContainer countries={countries} setSearchResult={setSearchResult} searchResult={searchResult} />
             {
                 loading ?
                     <Loader />
                     :
-                    <CountriesSection countries={searchedCountry} />
+                    <CountriesSection countries={searchResult.length > 0 ? searchResult : countries} />
             }
         </div>
     )
