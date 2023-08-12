@@ -1,38 +1,22 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react"
 
-function SearchBar({ countries, setSearchResult, searchResult }) {
+function SearchBar({ countries, searchResult, setSearchResult, setLoading }) {
+    
     const [input, setInput] = useState("");
-    // const [searchResult, setSearchResult] = useState(countries);
-    
-    
-    
 
-    //old
-    // const onWrite = (value) => {
-
-    //     setInput(value);
-
-    //     if (value === "") {
-    //         setSearchResults([])
-
-    //     } else {
-    //         setSearchResults(displayResult(value));
-    //     }
-
-    // }
+    setTimeout(() => {
+        setLoading(false);
+    }, 1200);
 
     const onSearch = (value) => {
-
         setInput(value);
 
         if (value === "") {
-            setSearchResult(countries)
-            console.log("empty");
-
+            setSearchResult([]);
         } else {
-            // setSearchedCountry(displayResult(value))
-            setSearchResult(displayResult(value))
+            setLoading(true)
+            setSearchResult(displayResult(value));
         }
 
     }

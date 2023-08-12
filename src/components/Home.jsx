@@ -19,7 +19,7 @@ function Home() {
 
         setTimeout(() => {
             setLoading(false);
-        }, 200);
+        }, 1200);
         
         fetchCountries().then(data => {
             setCountries(data);
@@ -27,16 +27,12 @@ function Home() {
     }, [])
     
 
-    console.log(countries)
-    console.log(searchResult)
-
-
 
     return (
         <div className={darkMode ? "dark" : "light"}>
 
             <Header />
-            <SearchContainer countries={countries} setSearchResult={setSearchResult} searchResult={searchResult} />
+            <SearchContainer setLoading={setLoading} countries={countries} setSearchResult={setSearchResult} searchResult={searchResult} />
             {
                 loading ?
                     <Loader />
