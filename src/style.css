@@ -59,7 +59,7 @@ header h1 {
 }
 .mode-btn {
   position: absolute;
-  top: 25px;
+  top: 22px;
   right: 25px;
 }
 
@@ -286,50 +286,6 @@ header.dark {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-/* Media queries for responsiveness */
-/* Media queries for responsiveness */
-@media only screen and (max-width: 1200px) {
-  .search-container {
-    margin: 80px;
-  }
-}
-
-@media only screen and (max-width: 992px) {
-  .search-container {
-    margin: 60px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .search-container {
-    margin: 40px;
-  }
-
-  .search-form {
-    grid-template-columns: 1fr;
-  }
-
-  .search-group {
-    width: 100%;
-  }
-}
-
-@media only screen and (max-width: 576px) {
-  .search-container {
-    margin: 20px;
-  }
-
-  .search-form {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .search-group {
-    width: 100%;
-    height: auto;
-    padding: 10px 0;
-  }
-}
 
 
 
@@ -488,4 +444,81 @@ header.dark {
     'wght' 700,
     'GRAD' 0,
     'opsz' 48
+}
+
+
+
+
+/* Media queries for responsiveness */
+/* Media queries for responsiveness */
+@media only screen and (max-width: 1200px) {
+  .search-container {
+    margin: 80px;
+  }
+
+  .countries-section {
+    grid-template-columns: repeat(3, 300px);
+    gap: 20px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .search-container {
+    margin: 60px;
+  }
+
+  .countries-section {
+    grid-template-columns: repeat(2, 300px);
+    gap: 20px 50px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .search-container {
+    margin: 40px;
+  }
+
+  .search-form {
+    grid-template-columns: 1fr;
+  }
+
+  .search-group {
+    width: 100%;
+  }
+
+}
+
+@media only screen and (max-width: 700px) {
+  .countries-section {
+    grid-template-columns: repeat(2, 300px);
+    gap: 20px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .countries-section {
+    grid-template-columns: repeat(1, 300px);
+    gap: 20px;
+  }
+}
+  @media only screen and (max-width: 576px) {
+  .search-container {
+    margin: 20px;
+  }
+  .search-form {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .search-group {
+    width: 100%;
+    height: auto;
+    padding: 10px 0;
+  }
+
+    .mode-btn {
+      right: 5px;
+    }
+
+  
 }
