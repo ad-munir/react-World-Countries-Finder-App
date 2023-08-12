@@ -10,6 +10,7 @@ function Home() {
 
     const { darkMode } = useContext(CountryContext);
 
+    
     const [countries, setCountries] = useState([]);
     const [searchResult, setSearchResult] = useState(countries);
     const [loading, setLoading] = useState(true);

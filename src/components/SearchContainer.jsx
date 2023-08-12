@@ -19,7 +19,7 @@ const SearchContainer = ({ countries, setSearchResult, searchResult, setLoading 
         }
     });
 
-    
+    console.log(filteredCountries)
     
     return (
         <div className="search-container">
