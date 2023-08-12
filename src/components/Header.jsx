@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import DarkLightButton from "./DarkLightButton"
-import { CountryContext } from "../Contexts/CountryContext";
+import { CountryContext } from "../Contexts/contexts";
 
 const Header = () => {
 

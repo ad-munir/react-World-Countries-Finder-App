@@ -1,16 +1,17 @@
 import { useContext, useEffect, useState } from "react";
-import { CountryContext } from "../Contexts/CountryContext";
 import { fetchCountries } from "../Api/restcountries";
 import Header from "./Header";
-import SearchBox from "./SearchBox";
-import Country from "./Country";
 import CountriesSection from "./CountriesSection";
+import SearchContainer from "./SearchContainer";
+import Loader from "./Loader";
+import { CountryContext } from "../Contexts/contexts";
 
 function Home() {
 
-    const { darkMode, toggleDarkMode } = useContext(CountryContext);
+    const { darkMode } = useContext(CountryContext);
 
     const [countries, setCountries] = useState([]);
+    const [searchedCountry, setSearchedCountry] = useState([]);
     const [loading, setLoading] = useState(true);
 
 
@@ -23,8 +24,9 @@ function Home() {
         fetchCountries().then(data => {
             setCountries(data);
         });
-
+        setSearchedCountry(countries)
     }, [])
+
 
 
 
@@ -32,15 +34,12 @@ function Home() {
         <div className={darkMode ? "dark" : "light"}>
 
             <Header />
-            <SearchBox countries={countries} />
+            <SearchContainer countries={searchedCountry} setSearchedCountry={setSearchedCountry} />
             {
                 loading ?
-                    <div className="loader">Loading..</div>
+                    <Loader />
                     :
-                    // countries.map((country, index) => (
-                    //     <Country key={index} country={country} />
-                    // ))
-                    <CountriesSection countries={countries} />
+                    <CountriesSection countries={searchedCountry} />
             }
         </div>
     )

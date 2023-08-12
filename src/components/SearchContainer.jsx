@@ -2,7 +2,7 @@
 import Filter from "./Filter"
 import SearchBar from "./SearchBar"
 
-const SearchBox = ({ countries }) => {
+const SearchContainer = ({ countries, setSearchedCountry }) => {
 
 
 
@@ -10,13 +10,10 @@ const SearchBox = ({ countries }) => {
         <div className="search-container">
             <h2>Search for a Country</h2>
             <div className="search-form">
-                <div className="search-group">
-                    <label htmlFor="search-bar">Search</label>
-                    <SearchBar countries={countries} />
-                </div>
-
+                
+                <SearchBar countries={countries} setSearchedCountry={setSearchedCountry} />
                 <Filter name={"continent"} options={[]} />
-                <Filter name={"language"} options={["a","b","c"]} />
+                <Filter name={"language"} options={["ahkb","bbhbn","cjkj"]} />
 
 
                 <div className="search-group">
@@ -27,4 +24,4 @@ const SearchBox = ({ countries }) => {
     )
 }
 
-export default SearchBox
+export default SearchContainer

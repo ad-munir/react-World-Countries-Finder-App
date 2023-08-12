@@ -1,13 +1,14 @@
 /* eslint-disable react/prop-types */
 
 const Filter = ({ name, options }) => {
+
     return (
         <div className="search-group">
-            <label htmlFor="continent-dropdown">{name}</label>
-            <div className="select-dropdown" id="continent-dropdown" >
+            <label htmlFor="dropdown">{name}</label>
+            <div className="select-dropdown" id="dropdown" >
                 <select>
                     {options.map( option => {
-                        <option key={option} value={option}>{option}</option>
+                        <option key={option} value={option}>{option}k</option>
                     })}
                 </select>
             </div>

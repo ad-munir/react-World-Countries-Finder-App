@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 import { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { CountryContext } from '../Contexts/CountryContext';
+import { CountryContext } from '../Contexts/contexts';
 
 function Country({ country }) {
 

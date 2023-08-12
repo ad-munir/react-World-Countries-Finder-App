@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { CountryContext } from "../Contexts/CountryContext";
 import DarkLightButton from "./DarkLightButton";
+import { CountryContext } from "../Contexts/contexts";
 
 function CountryInfo() {
     const { country, darkMode, toggleDarkMode } = useContext(CountryContext)
