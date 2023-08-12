@@ -1,72 +1,40 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import Filter from "./Filter"
+import { useEffect, useState } from "react";
 import SearchBar from "./SearchBar"
+import ContinentFilter from "./ContinentFilter";
+
+const regions = ['All', 'Americas', 'Europe', 'Asia', 'Oceania'];
 
 const SearchContainer = ({ countries, setSearchResult, searchResult, setLoading }) => {
 
-    // Create a Set of unique continents
-    const continentsSet = new Set(countries.map((country) => country.region));
-
-    // Create a Set of unique language names
-    //const languagesSet = new Set();
-
-    // countries.forEach(country => {
-    //     const languages = country.language.split(", ");
-
-    //     languages.forEach(language => {
-    //         languagesSet.add(language);
-    //     });
-    // });
-
-    // Convert Set to an array using spread operator
-    const continents = [...continentsSet];
-    //const languages = [...languagesSet];
 
 
-    function Language_Count() {
+    const [selectedRegion, setSelectedRegion] = useState('All');
+    const [searchQuery, setSearchQuery] = useState('');
 
-        const languageCounts = new Map();
+    const filteredCountries = countries.filter(country => {
+        if (selectedRegion === 'All' || country.region === selectedRegion) {
+            return country.name.toLowerCase().includes(searchQuery.toLowerCase());
+        }
+    });
 
-        countries.forEach(country => {
-
-            const languages = country.language;
-
-            for (const lang in languages) {
-
-                const languageName = languages[lang];
-
-                if (languageCounts.has(languageName)) {
-
-                    languageCounts.set(languageName, languageCounts.get(languageName) + 1);
-
-                } else {
-
-                    languageCounts.set(languageName, 1);
-                }
-            }
-        });
-
-        let languagesArray = [];
-        languageCounts.forEach((count, language) => {
-            languagesArray.push(`${language} (${count})`);
-        });
-
-        return languagesArray;
-    }
-
-    console.log(continents)
-    console.log(Language_Count())
-
-    const languages = Language_Count();
-
+    
+    
     return (
         <div className="search-container">
             <h2>Search for a Country</h2>
             <div className="search-form">
 
-                <SearchBar countries={countries} setSearchResult={setSearchResult} searchResult={searchResult} setLoading={setLoading} />
-                <Filter name={"continent"} options={continents} />
-                <Filter name={"language"} options={languages} />
+                <SearchBar
+                    setLoading={setLoading}
+                    searchQuery={searchQuery} setSearchQuery={setSearchQuery}
+                />
+                <ContinentFilter 
+                    name={"continent"}
+                    selectedRegion={selectedRegion} 
+                    setSelectedRegion={setSelectedRegion}
+                />
 
 
                 <div className="search-group">

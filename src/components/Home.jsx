@@ -20,12 +20,12 @@ function Home() {
         setTimeout(() => {
             setLoading(false);
         }, 1200);
-        
+
         fetchCountries().then(data => {
             setCountries(data);
         });
     }, [])
-    
+
 
 
     return (
@@ -35,9 +35,9 @@ function Home() {
             <SearchContainer setLoading={setLoading} countries={countries} setSearchResult={setSearchResult} searchResult={searchResult} />
             {
                 loading ?
-                    <Loader />
+                        <Loader />
                     :
-                    <CountriesSection countries={searchResult.length > 0 ? searchResult : countries} />
+                        <CountriesSection countries={searchResult.length > 0 ? searchResult : countries} />
             }
         </div>
     )
