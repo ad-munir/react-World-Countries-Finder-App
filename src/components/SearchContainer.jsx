@@ -1,12 +1,12 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import SearchBar from "./SearchBar"
 import ContinentFilter from "./ContinentFilter";
 
 const regions = ['All', 'Americas', 'Europe', 'Asia', 'Oceania'];
 
-const SearchContainer = ({ countries, setSearchResult, searchResult, setLoading }) => {
+const SearchContainer = ({ countries, setSearchResult, setLoading }) => {
 
 
 
@@ -19,8 +19,10 @@ const SearchContainer = ({ countries, setSearchResult, searchResult, setLoading 
         }
     });
 
-    console.log(filteredCountries)
-    
+    setTimeout(() => {
+        setSearchResult(filteredCountries)
+    }, 200);
+
     return (
         <div className="search-container">
             <h2>Search for a Country</h2>
@@ -30,9 +32,9 @@ const SearchContainer = ({ countries, setSearchResult, searchResult, setLoading 
                     setLoading={setLoading}
                     searchQuery={searchQuery} setSearchQuery={setSearchQuery}
                 />
-                <ContinentFilter 
+                <ContinentFilter
                     name={"continent"}
-                    selectedRegion={selectedRegion} 
+                    selectedRegion={selectedRegion}
                     setSelectedRegion={setSelectedRegion}
                 />
 

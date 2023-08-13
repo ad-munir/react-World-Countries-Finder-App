@@ -12,7 +12,7 @@ function Home() {
 
     
     const [countries, setCountries] = useState([]);
-    const [searchResult, setSearchResult] = useState(countries);
+    const [searchResult, setSearchResult] = useState([]);
     const [loading, setLoading] = useState(true);
 
 
@@ -33,7 +33,7 @@ function Home() {
         <div className={darkMode ? "dark" : "light"}>
 
             <Header />
-            <SearchContainer setLoading={setLoading} countries={countries} setSearchResult={setSearchResult} searchResult={searchResult} />
+            <SearchContainer countries={countries} setSearchResult={setSearchResult} />
             {
                 loading ?
                         <Loader />

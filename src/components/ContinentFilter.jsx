@@ -2,7 +2,7 @@
 
 const ContinentFilter = ({ name, selectedRegion, setSelectedRegion }) => {
 
-    const regions = ['All', 'Americas', 'Europe', 'Asia', 'Oceania'];
+    const regions = ['All', 'Americas', 'Europe', 'Africa', 'Asia', 'Oceania'];
 
     return (
         <div className="search-group">
