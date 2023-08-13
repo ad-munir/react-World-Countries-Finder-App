@@ -3,18 +3,23 @@
 import { useEffect, useMemo, useState } from "react";
 import SearchBar from "./SearchBar"
 import ContinentFilter from "./ContinentFilter";
+import LanguageFilter from "./LanguageFilter";
 
 const regions = ['All', 'Americas', 'Europe', 'Asia', 'Oceania'];
 
-const SearchContainer = ({ countries, setSearchResult, setLoading }) => {
+const SearchContainer = ({ countries, setSearchResult, setResultsEmpty, setLoading }) => {
 
 
 
     const [selectedRegion, setSelectedRegion] = useState('All');
+    const [selectedLanguage, setSelectedLanguage] = useState('All');
     const [searchQuery, setSearchQuery] = useState('');
 
     const filteredCountries = countries.filter(country => {
-        if (selectedRegion === 'All' || country.region === selectedRegion) {
+
+        if ((selectedRegion === 'All' || country.region === selectedRegion) && 
+            (selectedLanguage === 'All' || country.languages.includes(selectedLanguage))) {
+        
             return country.name.toLowerCase().includes(searchQuery.toLowerCase());
         }
     });
@@ -36,6 +41,12 @@ const SearchContainer = ({ countries, setSearchResult, setLoading }) => {
                     name={"continent"}
                     selectedRegion={selectedRegion}
                     setSelectedRegion={setSelectedRegion}
+                />
+
+                <LanguageFilter
+                    name={"language"}
+                    selectedLanguage={selectedLanguage}
+                    setSelectedLanguage={setSelectedLanguage}
                 />
 
 

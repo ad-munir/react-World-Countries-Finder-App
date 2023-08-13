@@ -8,7 +8,6 @@ function App() {
 
   
   
-  const [ username, setUsername ] = useState("MOUNIR");
   const [ country, setCountry ] = useState({});
   const [darkMode, setDarkMode] = useState(false);
 
@@ -18,7 +17,7 @@ function App() {
 
   return (
 
-    <CountryContext.Provider value={{username, setUsername, country, setCountry, darkMode, toggleDarkMode}}>
+    <CountryContext.Provider value={{ country, setCountry, darkMode, toggleDarkMode}}>
       <Router>
         <Routes>
           <Route path="/" exact element={<Home />} />

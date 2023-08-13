@@ -21,7 +21,7 @@ function convert(json) {
                 'code': country.cca2,
                 'flag': country.flags.png,
                 'capital': country.capital,
-                'language': country.languages,
+                'languages': country.languages ? Object.values(country.languages) : [], // Convert object values to an array
                 'population': country.population,
                 'area': country.area,
                 'region': country.region,
