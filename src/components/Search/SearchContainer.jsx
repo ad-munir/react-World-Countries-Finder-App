@@ -1,14 +1,14 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { useEffect, useMemo, useState } from "react";
-import SearchBar from "./SearchBar"
+import { useState } from "react";
+import SearchBar from "./SearchBar";
 import ContinentFilter from "./ContinentFilter";
 import LanguageFilter from "./LanguageFilter";
+
 
 const regions = ['All', 'Americas', 'Europe', 'Asia', 'Oceania'];
 
 const SearchContainer = ({ countries, setSearchResult, setLoading }) => {
-
 
 
     const [selectedRegion, setSelectedRegion] = useState('All');

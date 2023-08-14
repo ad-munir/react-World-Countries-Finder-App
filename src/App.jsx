@@ -6,18 +6,20 @@ import { CountryContext } from './Contexts/contexts';
 import { useState } from 'react';
 function App() {
 
-  
-  
-  const [ country, setCountry ] = useState({});
+
+
+  const [country, setCountry] = useState({});
   const [darkMode, setDarkMode] = useState(false);
 
   const toggleDarkMode = () => {
-    setDarkMode(prev => !prev);
-}
+    const newDarkMode = !darkMode;
+    setDarkMode(newDarkMode);
+    localStorage.setItem('darkMode', newDarkMode); // Save to local storage
+  }
 
   return (
 
-    <CountryContext.Provider value={{ country, setCountry, darkMode, toggleDarkMode}}>
+    <CountryContext.Provider value={{ country, setCountry, darkMode, setDarkMode, toggleDarkMode }}>
       <Router>
         <Routes>
           <Route path="/" exact element={<Home />} />
@@ -26,7 +28,7 @@ function App() {
         </Routes>
       </Router>
     </CountryContext.Provider>
-    
+
 
   )
 }

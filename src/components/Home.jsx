@@ -2,13 +2,13 @@ import { useContext, useEffect, useState } from "react";
 import { fetchCountries } from "../Api/restcountries";
 import Header from "./Header";
 import CountriesSection from "./CountriesSection";
-import SearchContainer from "./SearchContainer";
+import SearchContainer from "./Search/SearchContainer";
 import Loader from "./Loader";
 import { CountryContext } from "../Contexts/contexts";
 
 function Home() {
 
-    const { darkMode } = useContext(CountryContext);
+    const { darkMode, setDarkMode } = useContext(CountryContext);
 
 
     const [countries, setCountries] = useState([]);
@@ -19,6 +19,10 @@ function Home() {
 
 
     useEffect(() => {
+
+        // Read dark mode status from local storage when component mounts
+        const savedDarkMode = localStorage.getItem('darkMode') === 'true';
+        setDarkMode(savedDarkMode);
 
         setTimeout(() => {
             setLoading(false);
@@ -32,20 +36,19 @@ function Home() {
 
 
     return (
-        <div className={darkMode ? "dark" : "light"}>
-
+            <div className={darkMode ? "dark" : "light"}>
             <Header />
-            <SearchContainer countries={countries} setSearchResult={setSearchResult} />
-            {
-                loading ?
-                    <Loader />
-                    :
-                    searchResult.length > 0 ?
-                        <CountriesSection countries={searchResult} />
-                    :
-                        <div className="not-found">Country Not Found</div>
-            }
-        </div>
+                <SearchContainer countries={countries} setSearchResult={setSearchResult} />
+                {
+                    loading ?
+                        <Loader />
+                        :
+                        searchResult.length > 0 ?
+                            <CountriesSection countries={searchResult} />
+                        :
+                            <div className="not-found">Country Not Found</div>
+                }
+            </div>
     )
 }
 
