@@ -28,6 +28,12 @@ const SearchContainer = ({ countries, setSearchResult, setLoading }) => {
         setSearchResult(filteredCountries)
     }, 200);
 
+    const handleClear = ()=> {
+        setSearchQuery('');
+        setSelectedRegion('All')
+        setSelectedLanguage('All');
+    }
+
     return (
         <div className="search-container">
             <h2>Search for a Country</h2>
@@ -51,7 +57,7 @@ const SearchContainer = ({ countries, setSearchResult, setLoading }) => {
 
 
                 <div className="search-group">
-                    <button className="clear-btn">Clear Filters</button>
+                    <button className="clear-btn" onClick={handleClear}>Clear Filters</button>
                 </div>
             </div>
         </div>
