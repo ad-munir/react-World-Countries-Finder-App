@@ -1,19 +1,11 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { CountryContext } from "../Contexts/contexts";
 import Header from "./Header";
 import './../country-info.css'
-import { redirect } from "react-router-dom";
 
 function CountryInfo() {
     const { country, darkMode } = useContext(CountryContext)
 
-    useEffect(() => {
-
-        if (country.length === 0) {
-            // If country is not available, redirect to the home page
-            redirect("/");
-        }
-    }, [])
 
     return (
         <div>
