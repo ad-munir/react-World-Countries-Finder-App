@@ -14,7 +14,6 @@ function Home() {
     const [countries, setCountries] = useState([]);
 
     const [searchResult, setSearchResult] = useState([]);
-    const [resultsEmpty, setResultsEmpty] = useState(false);
 
     const [loading, setLoading] = useState(true);
 
@@ -23,7 +22,6 @@ function Home() {
 
         setTimeout(() => {
             setLoading(false);
-            setResultsEmpty(searchResult.length === 0)
         }, 1200);
 
         fetchCountries().then(data => {
@@ -33,28 +31,19 @@ function Home() {
     }, [])
 
 
-    // console.log(countries)
     return (
         <div className={darkMode ? "dark" : "light"}>
 
             <Header />
-            <SearchContainer countries={countries} setSearchResult={setSearchResult} setResultsEmpty={setResultsEmpty} />
+            <SearchContainer countries={countries} setSearchResult={setSearchResult} />
             {
                 loading ?
                     <Loader />
                     :
-                    
-                    resultsEmpty ? 
-                    <div>not found</div>
+                    searchResult.length > 0 ?
+                        <CountriesSection countries={searchResult} />
                     :
-                    <CountriesSection
-                        countries={
-                            searchResult.length > 0 ?
-                                searchResult
-                                :
-                                countries
-                        }
-                    />
+                        <div className="not-found">Country Not Found</div>
             }
         </div>
     )

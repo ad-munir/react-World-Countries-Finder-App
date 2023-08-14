@@ -24,22 +24,20 @@ body {
   transition: background 0.2s linear;
 }
 
-.home {
-  background-color: aqua;
-
-}
-
 
 .light {
   background-color: #DDE6ED;
   color: #9DB2BF;
   transition: background 0.2s linear;
+  min-height: 100vh;
+  padding-bottom: 30px;
 }
 
 .dark {
   background-color: #27374D;
   color: #DDE6ED;
   transition: background 0.2s linear;
+  padding-bottom: 30px;
 }
 
 /* ----- Header Component ---- */
@@ -375,7 +373,14 @@ header.dark {
   background-color: #213547;
 }
 
+/* ----- Not Found div----- */
 
+.not-found {
+  margin: 20px 220px;
+  font-size: 30px;
+  font-weight: 700;
+  /* transition: all 0.2s linear; */
+}
 
 
 

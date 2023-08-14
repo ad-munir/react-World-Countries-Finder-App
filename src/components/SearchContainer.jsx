@@ -7,7 +7,7 @@ import LanguageFilter from "./LanguageFilter";
 
 const regions = ['All', 'Americas', 'Europe', 'Asia', 'Oceania'];
 
-const SearchContainer = ({ countries, setSearchResult, setResultsEmpty, setLoading }) => {
+const SearchContainer = ({ countries, setSearchResult, setLoading }) => {
 
 
 
